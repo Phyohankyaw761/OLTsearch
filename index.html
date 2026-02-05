@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
 <body>
   <h2>🔍 YGN_OLT_SEARCH</h2>
 <h3 style="color: green; text-align: left; margin-top: 0;">PHK FBB_YGN</h3>
-  <input type="text" id="searchInput" placeholder="Search by Account, Subscriber Node, or ONT Serial" />
+  <input type="text" id="searchInput" placeholder="Search Site Code or OLT Hostname" />
   <button onclick="search()">Search</button>
 
   <div id="result" class="result" style="display:none;"></div>
@@ -36,9 +36,9 @@ function search() {
   const resultDiv = document.getElementById("result");
 
   const matches = csvData.filter(row =>
-    (row["Account"] || "").toLowerCase().includes(query) ||
-    (row["Subscriber node"] || "").toLowerCase().includes(query) ||
-    (row["ONT serial"] || "").toLowerCase().includes(query)
+    (row["Site Code"] || "").toLowerCase().includes(query) ||
+    (row["OLT Hostname"] || "").toLowerCase().includes(query) ||
+    (row["OLT Vander"] || "").toLowerCase().includes(query)
   );
 
   if (matches.length > 0) {
